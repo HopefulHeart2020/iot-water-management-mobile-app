@@ -1,4 +1,4 @@
-# Automated Wastewater Management and Irrigation System, Ionic App
+# Automated Water/Wastewater Management and Irrigation System, Ionic App
 
 # Screenshots
 
