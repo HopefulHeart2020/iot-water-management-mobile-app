@@ -2,8 +2,8 @@
 
 # Screenshot
 
-![Splashscreen](/screenshots/Splashscreen.jpg | height=50)
-![Splashscreen](/screenshots/dashboard.jpeg | height=50)
+![Splashscreen](/screenshots/Splashscreen.jpg|width=50)
+![Splashscreen](/screenshots/dashboard.jpeg | width=50)
 ![Splashscreen](/screenshots/greywater-rainwater-screen.jpeg | height=50)
 ![Splashscreen](/screenshots/irrigation-zoning.jpeg | height=50)
 ![Splashscreen](/screenshots/system-menu.jpeg | height=50)
