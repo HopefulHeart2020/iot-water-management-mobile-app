@@ -38,9 +38,9 @@ Also (rather unfortunately), myself and my co-founder had a bit of a meltdown as
 
 
 ## Other aspects to the project 
-* Node backend which serves as another MQTT client to relay commands from the ionic clients to the systems themselves. The main business logic (scheduling for irrigation, backwashing etc.) is done here.
-* MQTT broker, we used Amazon's CloudMQTT for this, but were in the process of writing our own broker using Mosca when myself and my co-founder had the meltdown. 
-* C++ scripts that ran on Arduinos (micros I think they were). Each system was controlled by an Arduino with a connected GPRS chip, the chip allowed for the Arduino's to also be MQTT clients which could talk to the apps and backend over our local cellular networks (Vodacom).
+* Node backend which serves as another MQTT client to relay commands from the ionic clients to the systems themselves. The main business logic (scheduling for irrigation, backwashing etc.) is done here. - see https://github.com/peter-stuart-turner/iot-water-management-backend
+* MQTT broker, we used Amazon's CloudMQTT for this, but were in the process of writing our own broker using Mosca when myself and my co-founder had the meltdown. - see https://www.cloudmqtt.com 
+* C++ scripts that ran on Arduinos (micros I think they were). Each system was controlled by an Arduino with a connected GPRS chip, the chip allowed for the Arduino's to also be MQTT clients which could talk to the apps and backend over our local cellular networks (Vodacom). - see https://github.com/peter-stuart-turner/iot-water-management-embedded-systems 
 
 ## Instructions
 Because of all of the various parts, (backend, broker, hardware) this project will likely not work out of the box. The app should work, but will not be linked to any systems. The repo is actually more to be used as a guideline as to how we went about building the systems, so that you can use it for educational purposes - and use bits of code you may want (MQTT, weather service etc. )
