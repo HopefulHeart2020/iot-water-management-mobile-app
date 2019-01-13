@@ -2,7 +2,15 @@
 
 # Screenshot
 
-![Splashscreen](/screenshots/Splashscreen.jpg)
+![Splashscreen](/screenshots/Splashscreen.jpg | height=50)
+![Splashscreen](/screenshots/dashboard.jpeg | height=50)
+![Splashscreen](/screenshots/greywater-rainwater-screen.jpeg | height=50)
+![Splashscreen](/screenshots/irrigation-zoning.jpeg | height=50)
+![Splashscreen](/screenshots/system-menu.jpeg | height=50)
+![Splashscreen](/screenshots/system-settings.jpeg | height=50)
+![Splashscreen](/screenshots/system-Andre-Van-Druten.jpg | height=50)
+![Splashscreen](/screenshots/arduino-controller.jpg | height=50)
+
 
 ## Background: What was this project about?
 
@@ -12,9 +20,9 @@ The system is able to smartly manage your house’s water supply by alternating 
 
 The system comes with a mobile app (available on iOS and android usng Ionic) that allows you to:
 
-• Check your greywater and rainwater levels
-• ‘Zone’ your garden, for irrigation
-• Manage your system (backwashes, irrigation schedules etc.)
+* Check your greywater and rainwater levels
+* ‘Zone’ your garden, for irrigation
+* Manage your system (backwashes, irrigation schedules etc.)
 
 The system was also designed to be smart enough to make decisions based on the weather at your location (if it is raining, it will not irrigate). Unfortunately we never got around to fully implementing this functionality. 
 
