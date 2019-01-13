@@ -1,8 +1,8 @@
 # Automated Wastewater Management and Irrigation System, Ionic App
 
-# Screenshot
+# Screenshots
 
-<img src="/screenshots/Splashscreen.jpg" alt="splashscreen" height="20%">
+<img src="/screenshots/Splashscreen.jpg" alt="splashscreen" width="30px">
 
 ![Splashscreen](/screenshots/Splashscreen.jpg|width=50)
 ![Splashscreen](/screenshots/dashboard.jpeg | width=50)
