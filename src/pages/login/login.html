@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-2>
+      </ion-col>
+      <ion-col class="login-inputs" col-8>
+        <ion-item color="primary">
+          <ion-input type="email" [(ngModel)]="user.email" placeholder="Your Email" value="hesterk@iafrica.com"></ion-input>
+        </ion-item>
+        <ion-item color="primary">
+          <ion-input type="password" [(ngModel)]="user.password" placeholder="Your Password" value="RickyLara123!"></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col col-6>
+          <button ion-button large block outline (tap)="login(user);">Login</button>
+        </ion-col>
+          <ion-col col-6>
+          <button ion-button large block outline (tap)="showRoleAlert();">Register</button>
+        </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            <button ion-button icon-only block color="facebook">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button icon-only block color="gplus">
+              <ion-icon name="logo-googleplus"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col col-2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

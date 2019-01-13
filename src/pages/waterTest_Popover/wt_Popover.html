@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Running Test</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content" padding>
+  <ng-container *ngIf="system_Iterator==0">
+  <ion-card class="infoCard" *ngIf="all_Ready">
+    <ion-card-header>
+      TEST: {{test}}
+    </ion-card-header>
+    <ion-card-content>
+      <p><i>
+    Running for GSID: {{systems[system_Iterator].GSID}}<br>Client: {{client.first_name}} {{client.last_name}}</i></p>
+    </ion-card-content>
+  </ion-card>
+</ng-container>
+<ng-container *ngIf="system_Iterator==0">
+
+</ng-container>
+</ion-content>

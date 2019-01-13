@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-buttons end>
+      <button ion-button clear right (tap)="edit()">
+      Edit
+    </button>
+    </ion-buttons>
+    <ion-buttons left>
+      <button ion-button (tap)="done_and_proceed()">Done
+      </button>
+    </ion-buttons>
+    <ion-title>
+      <img alt="logo" class="headerLogo" height="40" src="assets/img/greenchain-header-logo.png">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card class="background">
+  <ng-container *ngIf="isReady">
+    <h2 padding>Hello!</h2>
+    <h3>And you are?</h3>
+    <ion-row class="spacer">
+    </ion-row>
+    <!-- Layout 3 -->
+    <ng-container *ngIf="layout == 'layout_3'">
+        <ion-row>
+          <ion-col col-1></ion-col>
+          <ion-col col-5 [class]="isSelected(clientUser.profiles[0])" (tap)="selectProfile(clientUser.profiles[0])"><img src="assets/img/family-member.png">
+            <p>{{clientUser.profiles[0].first_name}}
+            <ion-badge color="primary" *ngIf="clientUser.profiles[0].admin==true">Admin</ion-badge></p>
+          </ion-col>
+          <ion-col col-5 [class]="isSelected(clientUser.profiles[1])" (tap)="selectProfile(clientUser.profiles[1])"><img src="assets/img/family-member.png">
+            <p>{{clientUser.profiles[1].first_name}}
+            <ion-badge color="primary" *ngIf="clientUser.profiles[1].admin==true">Admin</ion-badge>
+          </p>
+          </ion-col>
+          <ion-col col-1></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-3></ion-col>
+          <ion-col col-6 [class]="isSelected(clientUser.profiles[2])" (tap)="selectProfile(clientUser.profiles[2])"><img src="assets/img/family-member.png">
+            <p>{{clientUser.profiles[2].first_name}}
+            <ion-badge color="primary" *ngIf="clientUser.profiles[2].admin==true">Admin</ion-badge></p>
+          </ion-col>
+          <ion-col col-3></ion-col>
+        </ion-row>
+      </ng-container>
+      <!-- Layout 4 -->
+      <ng-container *ngIf="layout == 'layout_4'">
+          <ion-row>
+            <ion-col col-1></ion-col>
+            <ion-col col-5 [class]="isSelected(clientUser.profiles[0])" (tap)="selectProfile(clientUser.profiles[0])"><img src="assets/img/family-member.png">
+              <p>{{clientUser.profiles[0].first_name}}
+              <ion-badge color="primary" *ngIf="clientUser.profiles[0].admin==true">Admin</ion-badge></p>
+            </ion-col>
+            <ion-col col-5 [class]="isSelected(clientUser.profiles[1])" (tap)="selectProfile(clientUser.profiles[1])"><img src="assets/img/family-member.png">
+              <p>{{clientUser.profiles[1].first_name}}
+              <ion-badge color="primary" *ngIf="clientUser.profiles[1].admin==true">Admin</ion-badge>
+            </p>
+            </ion-col>
+            <ion-col col-1></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-1></ion-col>
+            <ion-col col-5 [class]="isSelected(clientUser.profiles[2])" (tap)="selectProfile(clientUser.profiles[2])"><img src="assets/img/family-member.png">
+              <p>{{clientUser.profiles[2].first_name}}
+              <ion-badge color="primary" *ngIf="clientUser.profiles[2].admin==true">Admin</ion-badge></p>
+            </ion-col>
+            <ion-col col-5 [class]="isSelected(clientUser.profiles[3])" (tap)="selectProfile(clientUser.profiles[3])"><img src="assets/img/family-member.png">
+              <p>{{clientUser.profiles[3].first_name}}
+              <ion-badge color="primary" *ngIf="clientUser.profiles[3].admin==true">Admin</ion-badge>
+            </p>
+            </ion-col>
+            <ion-col col-1></ion-col>
+          </ion-row>
+        </ng-container>
+      </ng-container>
+  </ion-card>
+</ion-content>
+<ion-footer>
+</ion-footer>

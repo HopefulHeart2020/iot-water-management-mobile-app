@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-buttons end>
+      <button ion-button clear right (tap)="manage_Widgets()">
+      Widgets
+    </button>
+    </ion-buttons>
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      <img alt="logo" class="headerLogo" height="40" src="assets/img/greenchain-header-logo.png">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card color="primary" *ngIf="isReady">
+    <ion-card-header color="rain">
+      <b>{{adminUser.admin_profile.first_name}}'s Management Portal</b>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-list>
+          <ion-item color="primary" (tap)="viewAdminClients()">
+            <ion-icon name="md-contacts" item-start></ion-icon>
+            Clients:
+            <ion-badge color="thirdly" item-end>{{adminUser.clients.length}}</ion-badge>
+          </ion-item>
+        </ion-list>
+        <button ion-button full icon-start color="thirdly" (tap)="presentToolboxModal()">
+        <ion-icon color="sun" name="happy"></ion-icon>
+        <i>Toolbox</i>
+        </button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title>Admin</ion-title>
+  </ion-toolbar>
+</ion-footer>

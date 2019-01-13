@@ -1,0 +1,12 @@
+.ios,
+.md {
+  $chainLight: #C3CFC6;
+  $chainDark: #182319;
+  $chainMed: #96AF4E;
+
+  modal-dimensions-info {
+    .content {
+      background-color: $chainMed;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Scheduling</ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button right>
+        Edit
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ng-container *ngIf="schedulesSet">
+      <ion-list-header>
+        Slide to Edit
+      </ion-list-header>
+      <ion-item-sliding *ngFor="let schedule of displayableSchedules">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/img/schedule-avatar.jpg">
+        </ion-avatar>
+        <h3><b>{{schedule.name}}</b></h3>
+        <h4>Time: {{schedule.time}}</h4>
+        <p>{{schedule.dayDescription}}</p>
+        <ion-icon item-end name="md-information-circle"></ion-icon>
+      </ion-item>
+      <ion-item-options side="right">
+      <button (tap)="presentScheduleEditAlert(schedule)" ion-button color="secondary">
+        <ion-icon name="ios-more"></ion-icon>
+      </button>
+      <button (tap)="deleteSchedule(schedule)" ion-button color="danger">
+        <ion-icon name="md-trash"></ion-icon>
+      </button>
+    </ion-item-options>
+    </ion-item-sliding>
+    </ng-container>
+    <ng-container *ngIf="!schedulesSet">
+      <ion-list-header>
+        No Schedules Set
+      </ion-list-header>
+      <button ion-item color="secondary" (tap)="newSchedule()">Set Schedule</button>
+    </ng-container>
+  </ion-list>
+</ion-content>
+
+
+<!-- <ion-list>
+  <ion-item>
+  <ion-avatar item-start>
+    <img src="assets/img/schedule-avatar.jpg">
+  </ion-avatar>
+  <h3><b>Irrigation</b></h3>
+  <h4>Specific Zones</h4>
+  <p>Every Thursday at 2:00PM</p>
+  <ion-icon (tap)=scheduleInfo(1) item-end name="md-information-circle"></ion-icon>
+  </ion-item>
+  <ion-item>
+  <ion-avatar item-start>
+    <img src="assets/img/schedule-avatar.jpg">
+  </ion-avatar>
+  <h3><b>Irrigation</b></h3>
+  <h4>All Zones</h4>
+  <p>Every 2nd Friday at 4:00AM</p>
+  <ion-icon (tap)=scheduleInfo(2) item-end name="md-information-circle"></ion-icon>
+  </ion-item>
+  <ion-item>
+    <ion-avatar item-start>
+      <img src="assets/img/schedule-avatar.jpg">
+    </ion-avatar>
+    <h3><b>Irrigation</b></h3>
+    <h4>Specific Zones</h4>
+    <p>Tuesday and Wednesday, 6:00AM</p>
+    <ion-icon (tap)=scheduleInfo(3) item-end name="md-information-circle"></ion-icon>
+  </ion-item>
+</ion-list> -->

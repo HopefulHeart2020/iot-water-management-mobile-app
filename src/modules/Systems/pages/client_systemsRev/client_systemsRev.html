@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      <img alt="logo" class="headerLogo" height="40" src="assets/img/greenchain-header-logo.png">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="system-cards">
+  <ng-container *ngIf="canDisplaySystems">
+    <ng-container *ngIf="adminToolboxEnabled">
+      <ion-card *ngFor="let system of displayable_Systems" (tap)=present_AdminOptions_AS(system)>
+        <img src={{system.imgURL}}/>
+        <div class="card-title">{{system.title}}</div>
+        <div class="card-subtitle">{{system.subTitle}}</div>
+      </ion-card>
+    </ng-container>
+    <ng-container *ngIf="!adminToolboxEnabled">
+      <ion-card *ngFor="let system of displayable_Systems" (tap)=viewSystem(system)>
+        <img src={{system.imgURL}}/>
+        <div class="card-title">{{system.title}}</div>
+        <div class="card-subtitle">{{system.subTitle}}</div>
+      </ion-card>
+    </ng-container>
+  </ng-container>
+</ion-content>

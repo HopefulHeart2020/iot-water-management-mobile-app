@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Add Schedule</ion-title>
+    <ion-buttons end>
+      <button ion-button right (tap)="close()">
+        Back
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Type</ion-label>
+      <ion-select [(ngModel)]="newSchedule.type" multiple="false" cancelText="Cancel" okText="Accept">
+        <ion-option [value]="type.name" *ngFor="let type of allowedScheduleTypes">{{type.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Days</ion-label>
+      <ion-select [(ngModel)]="newSchedule.days" multiple="true" cancelText="Cancel" okText="Accept">
+        <ion-option value="0">Sunday</ion-option>
+        <ion-option value="1">Monday</ion-option>
+        <ion-option value="2">Tuesday</ion-option>
+        <ion-option value="3">Wednesday</ion-option>
+        <ion-option value="4">Thursday</ion-option>
+        <ion-option value="5">Friday</ion-option>
+        <ion-option value="6">Saturday</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Time</ion-label>
+      <ion-multi-picker item-content [(ngModel)]="rawTimePicked" [multiPickerColumns]="timePickerValues.time"></ion-multi-picker>
+    </ion-item>
+  </ion-list>
+  <ion-row>
+    <ion-col col-2></ion-col>
+    <ion-col col-8>
+      <button ion-button large block round (tap)="saveSchedule()">Done</button>
+    </ion-col>
+    <ion-col col-2></ion-col>
+  </ion-row>
+</ion-content>

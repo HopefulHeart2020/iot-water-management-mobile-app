@@ -1,0 +1,82 @@
+.ios,
+.md {
+  $chainLight: #C3CFC6;
+  $chainDark: #182319;
+  $chainMed:  #96AF4E;
+  page-admin-clients {
+    // .content {
+    //   background-color: $chainLight;
+    // }
+    .content {
+      ion-grid {
+        height: 100%;
+        justify-content: center;
+      }
+      background-image: url("../assets/img/background_Styger.png");
+      background-size: cover;
+    }
+
+    .card-background-page {
+      ion-card {
+        position: relative;
+        text-align: center;
+      }
+
+      .card-title {
+        position: absolute;
+        top: 36%;
+        font-size: 3.0em;
+        width: 100%;
+        font-weight: bold;
+        color: $chainDark;
+        //background-color: $chainLight;
+      }
+
+      .card-subtitle {
+        font-size: 2.0em;
+        position: absolute;
+        top: 52%;
+        width: 100%;
+        color: $chainLight;
+        //background-color: $chainLight;
+      }
+    }
+    .systemsCard-page {
+        // position: relative;
+        text-align: center;
+        // background-color: $chainLight;
+        // color: $chainDark;
+        background-image: url("../assets/img/Item_background_Styger.png");
+        background-size: cover;
+
+        .button{
+        font-family: sans-serif;
+        }
+        h1{
+            font-size: 1.5em;
+            font-family: sans-serif;
+            font-variant: small-caps;
+            font-weight: bold;
+            color: $chainDark;
+        }
+    }
+    .buttonCard-page {
+        position: relative;
+        text-align: center;
+        // background-color: $chainDark;
+        // color: $chainDark;
+        background-image: url("../assets/img/banner_Styger1.png");
+        background-size: cover;
+
+        .button{
+      //  font-family: serif;
+        }
+        h1{
+            font-size: 1.5em;
+            font-family: sans-serif;
+            font-variant: small-caps;
+            font-weight: bold;
+        }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-buttons end>
+      <button ion-button clear right (tap)="manage_Widgets()">
+      Widgets
+    </button>
+    </ion-buttons>
+    <ion-buttons left>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      <img alt="logo" class="headerLogo" height="40" src="assets/img/greenchain-header-logo.png">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ng-container *ngIf="isReady">
+    <!-- Main Client Portal -->
+  <ion-card color="primary">
+    <ion-card-header color="rain">
+      <b>{{clientProfile.first_name}}'s User Portal</b>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-list>
+          <ion-item color="primary">
+            <ion-icon name="md-contacts" item-start></ion-icon>
+            Systems:
+            <ion-badge color="thirdly" item-end>{{clientUser.systems.length}}</ion-badge>
+          </ion-item>
+        </ion-list>
+        <button ion-button full icon-start color="thirdly" (tap)="navigate_To_Systems()">
+        <ion-icon color="primary" name="md-eye"></ion-icon>
+        <i>View Systems</i>
+        </button>
+    </ion-card-content>
+  </ion-card>
+  <!-- Water Restrictions -->
+  <!-- <ion-card color="primary">
+    <ion-card-header color="rain">
+      <b>Water Restrictions</b>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item color="primary" (tap)="showWaterRestriction_Action_Sheet()">
+        <ion-icon name="ios-water" item-start></ion-icon>
+        Level
+        <ion-badge color="danger" item-end>5b</ion-badge>
+      </ion-item>
+      <button ion-button icon-start full color="thirdly" (tap)="showWaterRestriction_Action_Sheet()">
+        <ion-icon color="primary" name="md-book"></ion-icon> More Info</button>
+    </ion-card-content>
+  </ion-card> -->
+
+  <!-- Widget Testing  -->
+  <ng-container *ngFor="let widget of widgets">
+  <ion-card color="primary" *ngIf="widget.active">
+    <ion-card-header color="rain">
+      <b>{{widget.name}}</b>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item color="primary">
+        <ion-icon name="{{widget.icon}}" item-start></ion-icon>
+        {{widget.badgeTitle}}
+        <ion-badge color="{{widget.badgeColor}}" item-end>{{widget.badgeText}}</ion-badge>
+      </ion-item>
+      <button ion-button icon-start full color="thirdly" (tap)="showWaterRestriction_Action_Sheet()">
+        <ion-icon color="primary" name="md-book"></ion-icon> {{widget.buttonText}}</button>
+    </ion-card-content>
+  </ion-card>
+</ng-container>
+</ng-container>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title>Client</ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,59 @@
+.ios,
+.md {
+  page-intro {
+    .spacer {
+      padding-bottom: 10px;
+    }
+    // .content {
+    //   background-color: map-get($colors, grey);
+    //   background-image: url('../../img/loginpage.png');
+    //
+
+
+    .content {
+      ion-grid {
+        height: 100%;
+        justify-content: center;
+      }
+      background-image: url("../assets/img/background_Styger.png");
+      background-size: cover;
+    }
+
+    .card-background-page {
+      ion-card {
+        background-color: clear;
+        position: absolute;
+        text-align: center;
+      }
+
+      .card-title {
+        position: absolute;
+        top: 36%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .card-subtitle {
+        font-size: 1.0em;
+        position: absolute;
+        top: 52%;
+        width: 100%;
+        color: #fff;
+      }
+
+      .sign-in {
+        ion-item {
+          width: 60%;
+          align-content: center;
+        }
+        font-size: 1.0em;
+        position: absolute;
+        top: 22%;
+        width: 80%;
+        padding: 5px;
+      }
+    }
+  }
+}

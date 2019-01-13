@@ -1,0 +1,60 @@
+// http://ionicframework.com/docs/v2/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+
+.ios,
+.md {
+  $chainLight: #C3CFC6;
+  $chainMed: #96AF4E;
+  $chainThird: #5c715e;
+  $chainDark: #182319;
+  $SIDEMENU_TOP: #5c715e;
+  $SIDEMENU_BOTTOM: #C3CFC6;
+  $SIDEMENU_TRANSPARENCY: rgba(255,255,255,0.4);
+
+  page-menu {
+    .side-menu-gradient {
+      background: -webkit-gradient(left top, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+      background: -o-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+      background: -moz-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+      background: linear-gradient(to bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+
+      .menuItem {
+
+      }
+      .item-md {
+        background: transparent;
+        color: white;
+        font-weight: bold;
+      }
+
+      .item-ios {
+        background: transparent;
+      }
+    }
+
+    .content {}
+
+    h2 {
+      color: white;
+    }
+  }
+}
+// Custom Fonts
+@font-face {
+  font-family: Indie;
+  src: url('../assets/fonts/indie.woff2') format('woff2');
+}
+// $SIDEMENU_TOP: #A23C4B;
+// $SIDEMENU_BOTTOM: #ff9068;
+// $SIDEMENU_TRANSPARENCY: rgba(255,255,255,0.4);

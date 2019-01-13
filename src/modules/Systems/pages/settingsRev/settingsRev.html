@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="thirdly">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Settings</ion-title>
+    <ion-buttons start>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-group>
+      <ion-item *ngFor="let option of options" (tap)="presentSettingsModal(option)">
+        <ion-icon name={{option.icon}} item-start></ion-icon>
+        {{option.name}}
+        <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider color="toolbar"></ion-item-divider>
+      <ion-item>
+        <ion-icon name="ios-jet" item-start></ion-icon>
+        <ion-label> Holiday Mode</ion-label>
+        <ion-toggle color="secondary" checked="false"></ion-toggle>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-icon name="ios-water-outline" item-start></ion-icon>
+        <ion-label>Use Municipal</ion-label>
+        <ion-toggle color="secondary" checked="false"></ion-toggle>
+      </ion-item> -->
+    </ion-item-group>
+  </ion-list>
+  <ion-footer>
+    <button ion-button large full outline color="dark" (tap)="dismiss()">Back</button>
+  </ion-footer>
+</ion-content>

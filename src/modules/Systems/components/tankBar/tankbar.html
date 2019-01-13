@@ -1,0 +1,5 @@
+<div class="progress-outer" (click)="showPercentage()">
+    <div class="progress-inner" [style.width]="tankLevel + '%'" [ngStyle]="{'background-color': waterColour}">
+        {{tankVolume}}<b>ℓ</b>
+    </div>
+</div>

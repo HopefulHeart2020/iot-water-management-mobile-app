@@ -1,0 +1,53 @@
+.ios,
+.md {
+  $chainLight: #C3CFC6;
+  $chainDark: #182319;
+  $chainMed: #96AF4E;
+
+  page-client-dashboard {
+
+    .content {
+      ion-grid {
+        height: 95%;
+        justify-content: center;
+      }
+      background-image: url("../assets/img/background_Styger.png");
+      background-size: cover;
+
+      .headerLogo {
+        margin-top: 8px;
+        height: 27px;
+      }
+
+      .background {
+        height: 95%;
+        background-color: $chainDark;
+        opacity: 0.92;
+        p {
+          color: $chainMed;
+          font-size: 1.7em;
+          text-align: center;
+        }
+      }
+
+      .spacer {
+        height: 30px;
+      }
+
+      h2 {
+        text-align: center;
+        color: white;
+        font-family: 'Indie', cursive;
+        font-weight: bold;
+        font-size: 2em;
+      }
+
+      h3 {
+        text-align: center;
+        color: white;
+        font-family: 'Indie', cursive;
+        font-size: 1.7em;
+      }
+    }
+  }
+}

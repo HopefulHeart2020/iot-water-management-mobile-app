@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card class="profileCard">
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input [(ngModel)]="profile.user_name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Firstname</ion-label>
+    <ion-input [(ngModel)]="profile.first_name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Lastname</ion-label>
+    <ion-input [(ngModel)]="profile.last_name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <!-- <ion-label>Role:</ion-label>
+    <ion-input [disabled]='true' [(ngModel)]="profile.role"></ion-input> -->
+  </ion-item>
+  <button ion-button color="dark" outline full (click)="saveProfile()">Save Profile</button>
+</ion-card>
+
+
+</ion-content>

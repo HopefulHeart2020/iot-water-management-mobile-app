@@ -1,0 +1,23 @@
+.ios,
+.md {
+  $chainLight: #C3CFC6;
+  $chainDark: #182319;
+  $chainMed: #96AF4E;
+
+  page-tanks-settings {
+
+    .content {
+      h1 {
+        font-size: 2.5em;
+        font-family: sans-serif;
+        font-weight: bold;
+      }
+      ion-grid {
+        height: 100%;
+        justify-content: center;
+      }
+      background-image: url("../assets/img/background_Styger.png");
+      background-size: cover;
+    }
+  }
+}

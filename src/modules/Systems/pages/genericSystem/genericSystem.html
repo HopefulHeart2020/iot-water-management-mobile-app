@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{displayableSystem.system.system_model}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only right (tap)=configure(displayableSystem.system)>
+      Settings
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+  <!-- <ion-toolbar color="primary">
+
+  </ion-toolbar> -->
+</ion-header>
+<ion-content padding>
+  <ng-container *ngIf='canShowOverview'>
+    <ion-tabs color="toolbar">
+      <ion-tab [root]="overview" [rootParams]="sargs" tabTitle="Overview" tabIcon="ios-glasses"></ion-tab>
+      <ion-tab [root]="manage" [rootParams]="sargs" tabTitle="Manage" tabIcon="ios-leaf-outline"></ion-tab>
+      <!-- <ion-tab [root]="history" [rootParams]="sargs" tabTitle="History" tabIcon="md-analytics"></ion-tab> -->
+    </ion-tabs>
+  </ng-container>
+</ion-content>

@@ -1,0 +1,42 @@
+.ios,
+.md {
+  $chainLight: #C3CFC6;
+  $chainDark: #182319;
+  $chainMed: #96AF4E;
+
+  page-system-location {
+    .existing {
+        color: $chainDark;
+        font-size: 1.5em;
+        font-style: italic;
+    }
+    .scroll {
+      height: 100%;
+    }
+
+    #map {
+      width: 100%;
+      height: 280px;
+    }
+    #address_map {
+      width: 100%;
+      height: 280px;
+    }
+    .content {
+      .spacer {
+        height: 100px;
+      }
+
+      .testCard {
+        background-color: $chainLight;
+      }
+
+      ion-grid {
+        height: 100%;
+        justify-content: center;
+      }
+      background-image: url("../assets/img/background_Styger.png");
+      background-size: cover;
+    }
+  }
+}

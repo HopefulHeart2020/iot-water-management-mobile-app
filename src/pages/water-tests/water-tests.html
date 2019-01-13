@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Water Testing</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content" padding>
+  <div class="testWizard">
+    <ion-row>
+    </ion-row>
+    <h2><b><i>Test Wizard</i></b></h2>
+    <ng-container *ngIf="!testing.testReady">
+    <ng-container *ngIf="step=='one'">
+      <ion-card color="primary">
+        <ion-card-header>
+          Step 1: Pick Category
+        </ion-card-header>
+        <ion-card-content>
+          <ng-container *ngFor="let category of testing.testCategories; let i = index;">
+            <ion-item class="categoryItem" (tap)="selectCategory(category)">
+              <ion-label><b>{{category}}</b></ion-label>
+              <ion-icon *ngIf="selectedCategory==category" color="thirdly" name="md-checkmark" item-end></ion-icon>
+            </ion-item>
+          </ng-container>
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+    <ng-container *ngIf="step=='two'">
+      <ion-card color="primary">
+        <ion-card-header>
+          Step 2: Pick Test/s
+        </ion-card-header>
+        <ion-card-content>
+          <ng-container *ngFor="let test of tests; let i = index;">
+            <ion-item class="testItem" (tap)="selectTest(test.name)">
+              <ion-label><b>{{test.name}}</b></ion-label>
+              <ion-icon *ngIf="selectedTest==test.name" color="thirdly" name="md-checkmark" item-end></ion-icon>
+            </ion-item>
+          </ng-container>
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+    <ng-container *ngIf="step=='three'">
+      <ion-card color="primary">
+        <ion-card-header>
+          Step 3: Pick Client
+        </ion-card-header>
+        <ion-card-content>
+          <ng-container *ngFor="let client of general.clients; let i = index;">
+            <ion-item class="testItem" (tap)="selectClient(client)">
+              <ion-label><b>{{client.first_name}} {{client.last_name}}</b></ion-label>
+              <ion-icon *ngIf="selectedClient==client" color="thirdly" name="md-checkmark" item-end></ion-icon>
+            </ion-item>
+          </ng-container>
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+  </ng-container>
+    <ng-container *ngIf="testing.testReady">
+      <ion-card color="primary">
+        <ion-card-header>
+          Proceed To Test
+        </ion-card-header>
+        <ion-card-content>
+          <p><i>You have chosen to run test "{{selectedTest}}" for client {{selectedClient.first_name}} {{selectedClient.last_name}}</i></p>
+          <ion-label>Click below to Begin</ion-label>
+          <ion-col col-2></ion-col>
+          <ion-col col-8>
+              <button ion-button full color="primary" (tap)="present_WaterTestPopover()">Begin Test</button>
+          </ion-col>
+          <ion-col col-2></ion-col>
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+    <ion-row>
+      <ion-col col-3>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button full color="thirdly" (tap)="prevStep()">Prev</button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button full color="secondary" (tap)="nextStep()">Next</button>
+      </ion-col>
+      <ion-col col-3>
+      </ion-col>
+    </ion-row>
+    <ion-row class="spacer">
+    </ion-row>
+    <ion-row>
+      <ion-col col-3>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button round full color="primary" (tap)="restartWizard()">Restart</button>
+      </ion-col>
+      <ion-col col-3>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <button ion-button full outline color="dark" (click)="goBack()">Back</button>
+</ion-footer>

@@ -1,0 +1,49 @@
+.ios,
+.md {
+  $chainLight: #C3CFC6;
+  $chainDark: #182319;
+  $chainMed: #96AF4E;
+
+  page-client-systemsRev {
+    // .content {
+    //   background-color: $chainLight;
+    // }
+    .content {
+      ion-grid {
+        height: 100%;
+        justify-content: center;
+      }
+      background-image: url("../assets/img/background_Styger.png");
+      background-size: cover;
+      h2 {
+        color: $chainDark;
+        text-align: center;
+      }
+    }
+
+    .system-cards {
+      ion-card {
+        position: relative;
+        text-align: center;
+      }
+
+      .card-title {
+        position: absolute;
+        top: 26%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: yellow;
+      }
+
+      .card-subtitle {
+        font-size: 1.2em;
+        font-style: italic;
+        position: absolute;
+        top: 48%;
+        width: 100%;
+        color: #fff;
+      }
+    }
+  }
+}

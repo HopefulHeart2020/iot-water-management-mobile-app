@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Tanks</ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button right>
+        Edit
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="isReady">
+    <div [ngSwitch]="section">
+      <!-- Rainwater Tank Settings -->
+      <div *ngSwitchCase="'Rainwater'">
+        <ion-list>
+          <ion-item>
+            <ion-icon name="ios-analytics" item-start></ion-icon>
+            <ion-label>Use Default Tank</ion-label>
+            <ion-toggle color="secondary" [(ngModel)]="settings.RainFalconSettings.defaults_enabled" [checked]="settings.RainFalconSettings.defaults_enabled"></ion-toggle>
+          </ion-item>
+          <ion-item *ngIf="settings.RainFalconSettings.defaults_enabled">
+            Default Tank
+            <ion-note item-end>{{settings.RainFalconSettings.rTankType}}</ion-note>
+          </ion-item>
+          <ng-container *ngIf="!settings.RainFalconSettings.defaults_enabled">
+            <ion-item-divider>Dimensions</ion-item-divider>
+            <ion-item>
+              Sensor Height, X
+              <ion-note item-end>{{settings.RainFalconSettings.tank_dimensions.sensorHeight}}</ion-note>
+            </ion-item>
+            <ion-item>
+              Height Full, Y
+              <ion-note item-end>{{settings.RainFalconSettings.tank_dimensions.heightFull}}</ion-note>
+            </ion-item>
+            <ion-item>
+              Capacity, Z
+              <ion-note item-end>{{settings.RainFalconSettings.tank_dimensions.capacity}}</ion-note>
+            </ion-item>
+            <button color="secondary" ion-item (tap)="show_Dimension_Info()">
+              What Does This Mean?
+            </button>
+          </ng-container>
+        </ion-list>
+      </div>
+      <!-- Greywater Tank Settings -->
+      <div *ngSwitchCase="'Greywater'">
+        <ion-list>
+          <ion-item>
+            <ion-icon name="ios-analytics" item-start></ion-icon>
+            <ion-label>Use Default Tank</ion-label>
+            <ion-toggle color="secondary" [checked]="settings.GreyHeronSettings.defaults_enabled" [(ngModel)]="settings.GreyHeronSettings.defaults_enabled"></ion-toggle>
+          </ion-item>
+          <ion-item *ngIf="settings.GreyHeronSettings.defaults_enabled">
+            Default Tank
+            <ion-note item-end>{{settings.GreyHeronSettings.gTankType}}</ion-note>
+          </ion-item>
+          <ng-container *ngIf="!settings.RainFalconSettings.defaults_enabled">
+            <ion-item-divider>Dimensions</ion-item-divider>
+            <ion-item>
+              Sensor Height, X
+              <ion-note item-end>{{settings.GreyHeronSettings.tank_dimensions.sensorHeight}}</ion-note>
+            </ion-item>
+            <ion-item>
+              Height Full, Y
+              <ion-note item-end>{{settings.GreyHeronSettings.tank_dimensions.heightFull}}</ion-note>
+            </ion-item>
+            <ion-item>
+              Capacity, Z
+              <ion-note item-end>{{settings.GreyHeronSettings.tank_dimensions.capacity}}</ion-note>
+            </ion-item>
+            <button color="secondary" ion-item (tap)="show_Dimension_Info()">
+              What Does This Mean?
+            </button>
+          </ng-container>
+        </ion-list>
+      </div>
+    </div>
+  </ng-container>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="section" color="secondary">
+      <ion-segment-button value="Greywater">
+        Greywater
+      </ion-segment-button>
+      <ion-segment-button value="Rainwater">
+        Rainwater
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer>

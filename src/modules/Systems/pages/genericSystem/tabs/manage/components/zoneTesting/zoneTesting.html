@@ -1,0 +1,28 @@
+<ion-header>
+<ion-toolbar color="primary">
+  <ion-buttons end>
+    <button ion-button icon-only right (tap)=close()>
+    Back
+  </button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<ion-card color="primary" *ngIf="isReadyToChoose">
+<ion-card-header>
+  Pick a zone to test
+</ion-card-header>
+<ion-card-content>
+  <ion-list>
+    <button ion-item *ngFor="let zone of zones" (tap)="selectZone(zone)">
+      {{zone.name}}
+      <ion-icon *ngIf="selectedZone && selectedZone==zone" color="thirdly" name="md-checkmark" item-end></ion-icon>
+    </button>
+    <button ion-item color="thirdly" *ngIf="selectedZone" (tap)="beginTest()">
+      Begin Test
+    </button>
+  </ion-list>
+</ion-card-content>
+</ion-card>
+</ion-content>

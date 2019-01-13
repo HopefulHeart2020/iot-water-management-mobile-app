@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-navbar color="thirdly">
+    <ion-title>Water Restrictions</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ng-container>
+    <div padding>
+      <ion-segment color="dark" [(ngModel)]="tab">
+        <ion-segment-button value="general">
+          <b>Info</b>
+        </ion-segment-button>
+        <ion-segment-button value="levels">
+          <b>Levels</b>
+        </ion-segment-button>
+        <ion-segment-button value="tariffs">
+          <b>Tariffs</b>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    <div [ngSwitch]="tab" *ngIf="dataReady">
+      <ng-container *ngSwitchCase="'general'">
+        <ion-card *ngFor="let item of restrictionData.general">
+          <ion-card-header>
+            {{item.title}}
+          </ion-card-header>
+          <ion-card-content>
+            <i>"{{item.description}}"</i> <b>- City of Cape Town</b>
+          </ion-card-content>
+        </ion-card>
+      </ng-container>
+      <ng-container *ngSwitchCase="'levels'">
+        <ion-card *ngIf="!show_Current_Level_Info && !show_Specific_Level_Info">
+          <ng-container *ngFor="let level of restrictionData.levels.descriptions">
+            <ion-item (tap)="show_Level_Info(level.title)" color="{{get_Level_Item_Color(level.title)}}">
+              <ion-avatar item-start>
+                <img src="{{get_Level_Image_URL(level.title)}}">
+              </ion-avatar>
+              <h2><b>{{level.title}}</b></h2>
+              <p>{{level.short_description}}</p>
+            </ion-item>
+          </ng-container>
+        </ion-card>
+        <ion-card color="primary" *ngIf="show_Current_Level_Info">
+          <ion-card-header>
+            <h2><b>{{restrictionData.levels.current.Level_Text}}</b></h2>
+          </ion-card-header>
+          <ion-card-content>
+            <p><b><i>{{restrictionData.levels.current.short_description}}</i></b></p>
+            <p>{{restrictionData.levels.current.long_description}}</p>
+            <h3 center><u><b>What you need do:</b></u></h3>
+            <ul>
+              <li *ngFor="let item of restrictionData.levels.current.instructions">
+                {{item}}</li>
+            </ul>
+            <button ion-button full color="secondary" (tap)="do_Not_Show_Level_info()">All Levels</button>
+          </ion-card-content>
+        </ion-card>
+        <ion-card color="primary" *ngIf="show_Specific_Level_Info">
+          <ion-card-header>
+            <h2><b>{{level_to_Show}}</b></h2>
+          </ion-card-header>
+          <ion-card-content>
+            {{get_short_description(level_to_Show)}}
+            <br> Currently no more information to give.
+            <button ion-button full color="secondary" (tap)="do_Not_Show_Level_info()">All Levels</button>
+          </ion-card-content>
+        </ion-card>
+      </ng-container>
+      <ion-card *ngSwitchCase="'tariffs'" color="primary">
+        <ion-list>
+          <ion-item color="primary">
+            <ion-thumbnail item-start>
+              <img src="assets/img/R_tariffs.png">
+            </ion-thumbnail>
+            <h2><b>Tariffs</b></h2>
+            <p><i>Water tariffs<br>according to the level</i></p>
+          </ion-item>
+        </ion-list>
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <p>
+                {{restrictionData.tariffs.description}}
+              </p>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="option=='old_general'">
+
+    <ion-item>
+      <ion-icon name="ios-water" item-start></ion-icon>
+      General Info
+      <ion-badge color="danger" item-end>5b</ion-badge>
+    </ion-item>
+  </ng-container>
+</ion-content>
+<ion-footer>
+  <button ion-button full outline color="dark" (click)="close()">Back</button>
+</ion-footer>

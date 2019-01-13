@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="thirdly">
+    <ion-title>Toolbox</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content [class]="content_class">
+  <ng-container *ngIf="!toolboxOpen">
+    <ion-card color="primary">
+      <ion-card-header>
+        <h2><b><i>Well HELLO there!</i></b></h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row padding>
+            <p><i>"The names Patrick, and I'm head of Greenchain's foreign relations.<br>
+        Welcome to the Installer's Troubleshooting page. Your tools can be found in your toolbox below...""
+      </i></p>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5>
+              <ion-row class="spacer">
+              </ion-row>
+              <ion-row>
+                <button ion-button color="thirdly" outline (tap)="openToolbox()"> Tap to Open</button>
+                <img style="height:120px; " src="assets/img/gc_toolbox.png" (tap)="openToolbox()">
+              </ion-row>
+            </ion-col>
+            <ion-col col-7>
+              <img style="width:100%;" src="assets/img/mascot_1.png">
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <button ion-button full color="secondary">Tutorials</button>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+    <ion-grid *ngIf="toolboxOpen">
+      <ion-row style="background-color: #96AF4E;" (tap)="open_WaterTests()">
+          <ion-title>Water System Tests</ion-title>
+      </ion-row>
+
+      <ion-row style="background-color: #5c715e;" (tap)="open_ComsTests()">
+        <ion-title>Communication Tests</ion-title>
+      </ion-row>
+
+      <ion-row style="background-color: #C3CFC6;" (tap)="open_OtherTests()">
+        <ion-title color="dark">Other Tests</ion-title>
+      </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+  <button ion-button full outline color="dark" (click)="close()">Back</button>
+</ion-footer>
+<!-- style="background-color: #9b59b6;" -->

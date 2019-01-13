@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dashboard</ion-title>
+  </ion-navbar>
+  <ion-toolbar color="secondary">
+  <ion-title>Welcome, {{ (profileData | async)?.first_name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+    <ion-card color="thirdly">
+      <ion-card-header>
+        {{ (profileData | async)?.first_name }}'s Systems
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+          </ion-row>
+          <ion-row>
+            <ion-item>
+              <ion-label>Under Development</ion-label>
+            </ion-item>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

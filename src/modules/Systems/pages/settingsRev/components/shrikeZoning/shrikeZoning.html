@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Zoning</ion-title>
+    <ion-buttons end>
+      <button ion-button right (tap)="save_Changes()">
+      Save
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ng-container *ngIf="isReady">
+    <div [ngSwitch]="section">
+      <!-- Zoning Configuration Settings -->
+      <div *ngSwitchCase="'zoning'">
+        <ion-list *ngIf="settings.BushShrikeSettings.zones && showDisabledZones" reorder="true" (ionItemReorder)="reorderZones($event)">
+          <ion-item *ngFor="let zone of settings.BushShrikeSettings.zones" [color]="getZoneColour(zone.enabled)" (tap)="editZone_AS(zone)">
+            {{zone.name}}
+            <!-- <ion-badge *ngIf="zone.enabled && !zone.time_not_mode; else zoneDisabled" color="secondary" item-end>{{zone.mode}}</ion-badge>
+          <ng-template #zoneDisabled>
+            <ion-badge color="danger" item-end>Disabled</ion-badge>
+          </ng-template> -->
+            <!-- <ng-container *ngIf="zone.enabled && !zone.time_not_mode;else useTime">
+           <ion-badge color="secondary" item-end>{{zone.mode}}</ion-badge>
+         </ng-container> -->
+            <ion-badge *ngIf="zone.enabled && !zone.time_not_mode; else useTime" color="secondary" item-end>{{zone.mode}}</ion-badge>
+            <ng-template #useTime>
+              <ng-container *ngIf="zone.enabled && zone.time_not_mode;else disabled">
+                <ion-badge color="rain" item-end>{{zone.time_minutes}} minutes</ion-badge>
+              </ng-container>
+            </ng-template>
+            <ng-template #disabled>
+              <ion-badge color="danger" item-end>Disabled</ion-badge>
+            </ng-template>
+          </ion-item>
+        </ion-list>
+        <!-- <button *ngIf="showDisabledZones" ion-button block color="secondary" (tap)="toggleFnShowDisabledZones()">Hide Disabled Zones</button>
+        <button *ngIf="!showDisabledZones" ion-button block color="danger" (tap)="toggleFnShowDisabledZones()">Show Disabled Zones</button> -->
+      </div>
+
+      <!-- Mode and Default Time Settings -->
+      <div *ngSwitchCase="'modes'">
+        <ion-list *ngIf="settings.BushShrikeSettings.mode_minutes">
+          <ion-list-header>
+            Swipe to Edit
+          </ion-list-header>
+          <ion-item-sliding #slidingItemE>
+            <ion-item color="primary">
+              <b>Economic</b>
+              <ion-badge color="dark" item-end>{{settings.BushShrikeSettings.mode_minutes['E']}} minutes</ion-badge>
+            </ion-item>
+            <ion-item-options side="right">
+              <button ion-button color="secondary" (tap)="edit_Mode_Time('E', slidingItemE)">
+                Edit
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+          <ion-item-sliding #slidingItemS>
+            <ion-item color="primary">
+              <b>Standard</b>
+              <ion-badge color="dark" item-end>{{settings.BushShrikeSettings.mode_minutes['S']}} minutes</ion-badge>
+            </ion-item>
+            <ion-item-options side="right">
+              <button ion-button color="secondary" (tap)="edit_Mode_Time('S', slidingItemS)">
+                Edit
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+          <ion-item-sliding #slidingItemM>
+            <ion-item color="primary">
+              <b>Manic</b>
+              <ion-badge color="dark" item-end>{{settings.BushShrikeSettings.mode_minutes['M']}} minutes</ion-badge>
+            </ion-item>
+            <ion-item-options side="right">
+              <button ion-button color="secondary" (tap)="edit_Mode_Time('M', slidingItemM)">
+                Edit
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </div>
+    </div>
+  </ng-container>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="section" color="secondary">
+      <ion-segment-button value="zoning">
+        Config
+      </ion-segment-button>
+      <ion-segment-button value="modes">
+        Modes
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer>

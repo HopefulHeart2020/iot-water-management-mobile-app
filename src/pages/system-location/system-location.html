@@ -1,0 +1,77 @@
+<!--
+  Generated template for the SystemLocationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Locate System</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ng-container *ngIf="mapReady && location_SET">
+    <ion-row>
+      <ion-col col-1></ion-col>
+      <ion-col col-10>
+        <ion-row>
+          <h2 class="existing">Your current system location is set as shown below.</h2>
+        </ion-row>
+        <ion-row>
+          <button ion-button color="secondary" block (tap)="change_Location()">Change</button>
+        </ion-row>
+      </ion-col>
+      <ion-col col-1></ion-col>
+    </ion-row>
+  </ng-container>
+  <ng-container *ngIf="mapReady && !location_SET && queryType=='geolocate'">
+    <ion-row>
+      <ion-col col-1></ion-col>
+      <ion-col col-10>
+        <ion-buttons>
+          <!-- <button ion-button block color="dark" (tap)="clear_Marker()">Test Here</button> -->
+          <button ion-button block color="dark" (tap)="add_CurrentPositionSystemMarker()">Place Here</button>
+          <button ion-button block color="primary" (tap)="queryTypeIs('address')">Type Address</button>
+        </ion-buttons>
+      </ion-col>
+      <ion-col col-1></ion-col>
+    </ion-row>
+  </ng-container>
+  <ng-container *ngIf="mapReady && !location_SET && queryType=='address'">
+    <ion-row>
+      <ion-col col-1></ion-col>
+      <ion-col col-10>
+        <ion-item>
+          <ion-input placeholder="System Address" (tap)="showModal()" type="text"></ion-input>
+        </ion-item>
+        <ion-buttons>
+          <!-- <button ion-button block icon-start color="secondary" (tap)="search_Address()">
+          <ion-icon color="dark" name="search"></ion-icon>
+          <i>Search</i>
+          </button> -->
+          <button ion-button block color="primary" (tap)="queryTypeIs('geolocate')">Geolocate</button>
+        </ion-buttons>
+      </ion-col>
+      <ion-col col-1></ion-col>
+    </ion-row>
+  </ng-container>
+  <ng-container>
+    <div #map id="map"></div>
+  </ng-container>
+  <ng-container *ngIf="mapReady && !location_SET">
+    <ion-row>
+      <ion-col col-1></ion-col>
+      <ion-col col-10>
+        <ion-buttons>
+          <button ion-button block color="primary" (tap)="save_Location()">Save System Location</button>
+          <button *ngIf="existingLocation" ion-button block color="primary" (tap)="back_Existing()">Back</button>
+        </ion-buttons>
+      </ion-col>
+      <ion-col col-1></ion-col>
+    </ion-row>
+  </ng-container>
+</ion-content>

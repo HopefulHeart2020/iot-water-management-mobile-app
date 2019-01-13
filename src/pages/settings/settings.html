@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar color="thirdly">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>General Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="show_Settings">
+    <ng-container *ngIf="role == 'admin'">
+      <ion-item-divider>
+        Admin Tools
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>Enabled</ion-label>
+        <ion-toggle color="dark" checked="false"></ion-toggle>
+      </ion-item>
+      <ion-item-divider>
+        Toolbox
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>Enabled</ion-label>
+        <ion-toggle color="dark" checked="false"></ion-toggle>
+      </ion-item>
+    </ng-container>
+    <ng-container *ngIf="role == 'installer'">
+      <ion-item-divider>
+        Toolbox
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>Enabled</ion-label>
+        <ion-toggle color="dark" checked="false"></ion-toggle>
+      </ion-item>
+    </ng-container>
+    <ng-container *ngIf="role == 'client'">
+      <ion-item-divider>
+        My Family
+      </ion-item-divider>
+      <ion-item>
+        <ion-label color="thirdly">Family Sharing</ion-label>
+        <ion-toggle color="dark" [(ngModel)]="settings.familySharing" checked="{{ (generalSettings$ | async)?.familySharing }}"></ion-toggle>
+      </ion-item>
+      <ion-item *ngIf="settings.familySharing">
+        <ion-label color="thirdly">Family Name</ion-label>
+        <ion-input [(ngModel)]="settings.familyName" text-right placeholder="Family Name" value="{{ (generalSettings$ | async)?.familyName }}"></ion-input>
+      </ion-item>
+
+    </ng-container>
+  </ng-container>
+</ion-content>
+<ion-footer>
+  <button ion-button large full outline color="dark" (tap)="save()">Save</button>
+</ion-footer>

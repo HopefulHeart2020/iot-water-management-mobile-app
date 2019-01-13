@@ -1,0 +1,16 @@
+.ios,
+.md {
+  $chainLight: #C3CFC6;
+  $chainDark: #182319;
+  $chainMed: #96AF4E;
+
+  page-modal-autocomplete-items {
+    .content {
+      background-image: url("../assets/img/background_Styger.png");
+      background-size: cover;
+      .result{
+        background-color: $chainLight;
+      }
+    }
+  }
+}

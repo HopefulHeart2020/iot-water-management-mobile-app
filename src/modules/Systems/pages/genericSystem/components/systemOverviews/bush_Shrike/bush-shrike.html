@@ -1,0 +1,23 @@
+<ion-card color="primary">
+  <ion-card-header color="dark">
+    <b><i>System Overview</i></b>
+  </ion-card-header>
+  <ion-card-content>
+    <ng-container *ngIf="realTime_Data.last_irrigation">
+      <h2>Last Irrigation</h2>
+      <p>Tuesday</p>
+    </ng-container>
+    <ng-container *ngIf="realTime_Data.state">
+      <!-- <h2>System Status</h2>
+      <ion-row>
+       <ion-col col-2></ion-col>
+       <ion-col col-8><button ion-button block [color]="getStatusButtonColour()">{{systemStatus}}</button></ion-col>
+       <ion-col col-2></ion-col>
+       </ion-row> -->
+       <h2>Current State</h2>
+       <ion-row>
+         <button ion-button full outline color="dark">{{realTime_Data.state}}</button>
+      </ion-row>
+    </ng-container>
+  </ion-card-content>
+</ion-card>

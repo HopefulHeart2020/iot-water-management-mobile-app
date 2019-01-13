@@ -1,0 +1,41 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons left>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>
+        <img alt="logo" class="headerLogo" height="40" src="assets/img/greenchain-header-logo.png">
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="side-menu-gradient">
+    <ng-container *ngIf="menu_Initialized">
+        <button *ngFor="let p of pages" ion-item no-lines menuClose strong icon-end (tap)="openPage(p)">
+        <ion-icon name={{p.icon}}></ion-icon>  {{p.title}}
+      </button>
+    </ng-container>
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar color="dark">
+      <ion-item no-lines color="dark">
+        <h2>{{full_name}}</h2>
+        <ion-avatar item-end>
+          <img src="assets/img/family-member.png">
+        </ion-avatar>
+      </ion-item>
+        <button color="primary" ion-button clear item-start (tap)="logout()">Logout</button>
+    </ion-toolbar>
+  </ion-footer>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
+
+<!-- <button ion-button padding full color="dark" (tap)="logout()" large>Logout</button> -->

@@ -1,0 +1,19 @@
+<ion-content padding *ngIf="isReady">
+  <ng-container [ngSwitch]="displayableSystem.system.system_model">
+  <ng-container *ngSwitchCase="'Fish Eagle'">
+    <fish-eagle-overview></fish-eagle-overview>
+  </ng-container>
+  <ng-container *ngSwitchCase="'Rain Raptor'">
+    Rain Raptor Overview
+    </ng-container>
+  <ng-container *ngSwitchCase="'Rain Falcon'">
+    Rain Falcon Overview
+  </ng-container>
+  <ng-container *ngSwitchCase="'Bush Shrike'">
+    <bush-shrike-overview></bush-shrike-overview>
+  </ng-container>
+  <ng-container *ngSwitchDefault>
+    Default Overview
+  </ng-container>
+</ng-container>
+</ion-content>

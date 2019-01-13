@@ -1,0 +1,20 @@
+<ion-list>
+  <ng-container *ngIf="show_P_One">
+    <ion-list-header text-center>Choose Your System</ion-list-header>
+    <ion-item *ngFor="let item of popoverSystemsItemList;" (tap)="chooseSystemType(item.name)">
+      {{item.name}}
+    </ion-item>
+  </ng-container>
+  <ng-container *ngIf="show_P_Two">
+    <ion-list-header text-center no-margin>{{selectedSystem}} Configuration</ion-list-header>
+    <ion-item *ngFor="let item of popoverConfigItemList;" (tap)="systemConfig(item.name)">
+      {{item.name}}
+    </ion-item>
+  </ng-container>
+  <ng-container *ngIf="show_P_Three">
+    <ion-list-header text-center no-margin>{{selectedSystem}} Manual Configuration</ion-list-header>
+    <ion-item *ngFor="let item of manualConfigItemList;" (tap)="toManualConfig(item.name)">
+      {{item.name}}
+    </ion-item>
+  </ng-container>
+</ion-list>

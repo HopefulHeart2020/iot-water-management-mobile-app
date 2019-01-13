@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sources</ion-title>
+    <ion-buttons end>
+      <button ion-button right (tap)="save_Changes()">
+      Save
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Water Source</ion-label>
+      <ion-select [(ngModel)]="selectedSource" cancelText="Cancel" okText="Accept">
+        <ion-option value="auto">Be Smart About It</ion-option>
+        <ion-option value="greywater">Greywater</ion-option>
+        <ion-option value="rainwater">Rainwater</ion-option>
+        <ion-option value="municipal">Municipal</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-card color="danger" *ngIf="selectedSource == 'municipal'">
+    <ion-card-header>
+      Warning
+    </ion-card-header>
+    <ion-card-content>
+      <p><b>We are in level 5b water restrictions, municipal irrigation is prohibited</b></p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

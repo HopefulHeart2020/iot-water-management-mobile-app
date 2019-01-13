@@ -1,0 +1,40 @@
+.ios,
+.md {
+  $chainLight: #C3CFC6;
+  $chainDark: #182319;
+  $chainMed: #96AF4E;
+
+  page-water-tests {
+
+
+    .content {
+
+      .spacer {
+        height: 100px;
+      }
+      .testWizard {
+        ion-card{
+          height: 260px;
+        }
+        ion-card-header{
+          background-color: white;
+          font-weight: bolder;
+        }
+        h2 {
+          color: $chainDark;
+        }
+        ion-item {
+          background-color: $chainLight;
+        }
+      }
+
+
+      ion-grid {
+        height: 100%;
+        justify-content: center;
+      }
+      background-image: url("../assets/img/background_Styger.png");
+      background-size: cover;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "greenchain",
+  "app_id": "3a59ea73",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
