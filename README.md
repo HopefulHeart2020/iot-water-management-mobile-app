@@ -43,7 +43,7 @@ Also (rather unfortunately), myself and my co-founder had a bit of a meltdown as
 * C++ scripts that ran on Arduinos (micros I think they were). Each system was controlled by an Arduino with a connected GPRS chip, the chip allowed for the Arduino's to also be MQTT clients which could talk to the apps and backend over our local cellular networks (Vodacom).
 
 ## Instructions
-Because of all of the various parts, (backend, broker, hardware) this project will likely not work out of the box (the app should work, but will not be linked to any systems. The repo is actually more to be used as a guideline as to how we went about building the systems, so that you can use it for educational purposes - and use bits of code you may want (MQTT, weather service etc. )
+Because of all of the various parts, (backend, broker, hardware) this project will likely not work out of the box. The app should work, but will not be linked to any systems. The repo is actually more to be used as a guideline as to how we went about building the systems, so that you can use it for educational purposes - and use bits of code you may want (MQTT, weather service etc. )
 
 ## Contact
 If you are interested in this project, please do not hesitate to reach out to me, and I will help you out as best I can. 
