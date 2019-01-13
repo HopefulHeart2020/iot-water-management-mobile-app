@@ -2,6 +2,8 @@
 
 # Screenshot
 
+<img src="/screenshots/Splashscreen.jpg" alt="splashscreen" height="20%">
+
 ![Splashscreen](/screenshots/Splashscreen.jpg|width=50)
 ![Splashscreen](/screenshots/dashboard.jpeg | width=50)
 ![Splashscreen](/screenshots/greywater-rainwater-screen.jpeg | height=50)
