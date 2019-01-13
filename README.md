@@ -3,17 +3,17 @@
 # Screenshots
 
 <p float="left">
-  <img src="/screenshots/Splashscreen.jpg" alt="splashscreen" width="180px">
-  <img src="/screenshots/dashboard.jpeg" alt="dashboard" width="180px">
-  <img src="/screenshots/greywater-rainwater-screen.jpeg" alt="tank-levels" width="180px">
-  <img src="/screenshots/irrigation-zoning.jpeg" alt="irrigation-zoning" width="180px">
+  <img src="/screenshots/Splashscreen.jpg" alt="splashscreen" width="195px">
+  <img src="/screenshots/dashboard.jpeg" alt="dashboard" width="195px">
+  <img src="/screenshots/greywater-rainwater-screen.jpeg" alt="tank-levels" width="195px">
+  <img src="/screenshots/irrigation-zoning.jpeg" alt="irrigation-zoning" width="195px">
 </p>
 
 <p float="left">
-  <img src="/screenshots/system-menu.jpeg" alt="system-menu" width="180px">
-  <img src="/screenshots/system-settings.jpeg" alt="settings" width="180px">
-  <img src="/screenshots/system-Andre-Van-Druten.jpg" alt="client-van-druten" width="180px">
-  <img src="/screenshots/arduino-controller.jpg" alt="arduino-mqtt-controller" width="180px">
+  <img src="/screenshots/system-menu.jpeg" alt="system-menu" width="195px">
+  <img src="/screenshots/system-settings.jpeg" alt="settings" width="195px">
+  <img src="/screenshots/system-Andre-Van-Druten.jpg" alt="client-van-druten" width="195px">
+  <img src="/screenshots/arduino-controller.jpg" alt="arduino-mqtt-controller" width="195px">
 </p>
 
 
