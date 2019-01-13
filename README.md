@@ -2,6 +2,12 @@
 
 # Screenshots
 
+<p float="left">
+  <img src="/screenshots/Splashscreen.jpg" alt="splashscreen" width="120px">
+  <img src="/screenshots/dashboard.jpeg" alt="splashscreen" width="120px">
+  <img src="/screenshots/greywater-rainwater-screen.jpeg" alt="splashscreen" width="120px">
+</p>
+
 <img src="/screenshots/Splashscreen.jpg" alt="splashscreen" width="80px">
 <img src="/screenshots/dashboard.jpeg" alt="splashscreen" width="80px">
 
