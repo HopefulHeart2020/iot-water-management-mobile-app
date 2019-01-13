@@ -2,7 +2,8 @@
 
 # Screenshots
 
-<img src="/screenshots/Splashscreen.jpg" alt="splashscreen" width="30px">
+<img src="/screenshots/Splashscreen.jpg" alt="splashscreen" width="80px">
+<img src="/screenshots/dashboard.jpeg" alt="splashscreen" width="80px">
 
 ![Splashscreen](/screenshots/Splashscreen.jpg|width=50)
 ![Splashscreen](/screenshots/dashboard.jpeg | width=50)
