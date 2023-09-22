@@ -48,3 +48,4 @@ Because of all of the various parts, (backend, broker, hardware) this project wi
 
 ## Contact
 If you are interested in this project, please do not hesitate to reach out to me, and I will help you out as best I can. 
+
